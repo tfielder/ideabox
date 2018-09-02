@@ -10,7 +10,7 @@ describe 'user sees all categories' do
 
       expect(page).to have_content("#{cat1.topic}")
       expect(page).to have_content("#{cat2.topic}")
-      expect(page).to have_link("Create New Category")
+      expect(page).to have_link("Create a New Category")
     end
   end
 end
