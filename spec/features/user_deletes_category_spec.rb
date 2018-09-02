@@ -8,7 +8,7 @@ describe 'on category index page' do
 
       visit '/categories'
 
-      click_link "Delete"
+      first('.deletion').click_link("Delete")
 
       expect(current_path).to eq (categories_path)
       expect(page).to have_content("#{cat2.topic}")

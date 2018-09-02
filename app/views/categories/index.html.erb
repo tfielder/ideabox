@@ -3,8 +3,11 @@
 <%= link_to "Create a New Category", new_category_path %>
 
 <% @categories.each do |cat| %>
-  <p>
-    <%= cat.topic %>
-  </p>
-  <%= link_to "Delete", category_path(cat), method: :delete %>
+  <div class="deletion">
+    <p>
+      <%= cat.topic %>
+    </p>
+    <%= link_to "Edit", edit_category_path(cat) %>
+    <%= link_to "Delete", category_path(cat), method: :delete %>
+  </div>
 <% end %>
