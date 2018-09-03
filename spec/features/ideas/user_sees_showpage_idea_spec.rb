@@ -7,5 +7,6 @@ describe 'on idea showpage' do
 
     visit ideas_path
 
+    
   end
 end
