@@ -6,7 +6,7 @@ describe 'user sees all categories' do
       cat1 = Category.create(topic: "Social")
       cat2 = Category.create(topic: "Technology")
 
-      visit '/categories'
+      visit categories_path
 
       expect(page).to have_content("#{cat1.topic}")
       expect(page).to have_content("#{cat2.topic}")
