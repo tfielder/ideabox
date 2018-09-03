@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:edit]
+  before_action :set_category, only: [:edit, :update]
 
   def index
     @categories = Category.all
@@ -17,6 +17,11 @@ class CategoriesController < ApplicationController
 
   def edit
 
+  end
+
+  def update
+    @category.update(category_params)
+    redirect_to categories_path
   end
 
   def destroy

@@ -1,7 +1,3 @@
 <h1>Create New Category</h1>
 
-<%= form_for @category do |f| %>
-<%= f.label 'Topic' %></br>
-<%= f.text_field :topic %>
-<%= f.submit %>
-<% end %>
+<%= render partial: 'form' %>

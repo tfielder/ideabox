@@ -22,9 +22,8 @@ describe 'from category index' do
       first('.deletion').click_link 'Edit'
 
       expect(current_path).to eq(edit_category_path(cat1))
-
-      fill_in :topic, with: "Something"
-      click_link "Submit"
+      fill_in "category[topic]", with: "Something"
+      click_on "Update Category"
 
       expect(current_path).to eq(categories_path)
       expect(page).to have_content("Something")
