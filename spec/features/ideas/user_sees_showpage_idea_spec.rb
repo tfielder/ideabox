@@ -7,6 +7,5 @@ describe 'on idea showpage' do
 
     visit ideas_path
 
-    ('deletion').first.click_link("")
   end
 end

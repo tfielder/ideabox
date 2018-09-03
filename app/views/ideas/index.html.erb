@@ -5,7 +5,7 @@
 <% @ideas.each do |ideo| %>
   <div class="deletion">
     <ul>
-      <li><%= link_to "#{ideo.title}",  %></li>
+      <li><%= link_to "#{ideo.title}", idea_path(ideo) %></li>
       <li><%= ideo.image %></li>
       <li><%= ideo.note %></li>
     </ul>
