@@ -7,6 +7,7 @@ describe Idea, type: :model do
     it {should validate_presence_of :note}
   end
   describe 'relationships' do
-    it {should respond_to :category}
+    it {should have_many :ideacategories}
+    it {should have_many :categories.through :ideacategories}
   end
 end
