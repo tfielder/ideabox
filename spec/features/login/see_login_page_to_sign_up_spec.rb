@@ -15,7 +15,7 @@ describe 'as a visitor' do
 
       click_on "Create User"
 
-      expect(page).to have_content("Welcome, #{username}!")
+      expect(page).to have_content("Logged in as, #{username}")
     end
   end
   describe 'it can login with credentials' do
@@ -33,7 +33,7 @@ describe 'as a visitor' do
 
       expect(current_path).to eq(user_path(user))
 
-      expect(page).to have_content("Welcome, #{user.username}!")
+      expect(page).to have_content("Logged in as, #{user.username}")
       expect(page).to have_content("Log Out")
 
     end
