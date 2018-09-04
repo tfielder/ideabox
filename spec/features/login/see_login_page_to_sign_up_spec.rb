@@ -56,8 +56,7 @@ describe 'as a visitor' do
       click_on "Log Out"
 
       expect(current_path).to eq(root_path)
-      visit user_path(user)
-      expect(current_path).to eq(root_path)
+      expect(@current_user).to eq(nil)
     end
   end
 end
