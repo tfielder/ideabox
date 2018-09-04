@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20180904015558) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "idea_categories", force: :cascade do |t|
+  create_table "ideacategories", force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "idea_id"
-    t.index ["category_id"], name: "index_idea_categories_on_category_id"
-    t.index ["idea_id"], name: "index_idea_categories_on_idea_id"
+    t.index ["category_id"], name: "index_ideacategories_on_category_id"
+    t.index ["idea_id"], name: "index_ideacategories_on_idea_id"
   end
 
   create_table "ideas", force: :cascade do |t|
@@ -41,6 +41,6 @@ ActiveRecord::Schema.define(version: 20180904015558) do
     t.string "password_digest"
   end
 
-  add_foreign_key "idea_categories", "categories"
-  add_foreign_key "idea_categories", "ideas"
+  add_foreign_key "ideacategories", "categories"
+  add_foreign_key "ideacategories", "ideas"
 end
