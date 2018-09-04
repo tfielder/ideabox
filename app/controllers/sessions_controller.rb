@@ -12,4 +12,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    redirect_to root_path
+    session[:user_id] = nil
+    # reset_session
+    # session[:user_id] = nil
+  end
+
 end

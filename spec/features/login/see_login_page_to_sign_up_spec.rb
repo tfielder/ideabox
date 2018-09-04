@@ -38,4 +38,26 @@ describe 'as a visitor' do
 
     end
   end
+  describe 'it can logout' do
+    it 'can click on link to an account' do
+      user = User.create(username: "Rocket", password: "test")
+
+      visit '/'
+
+      click_on "Sign In"
+
+      fill_in :username, with: user.username
+      fill_in :password, with: user.password
+
+      click_on "Log In"
+
+      expect(current_path).to eq(user_path(user))
+
+      click_on "Log Out"
+
+      expect(current_path).to eq(root_path)
+      visit user_path(user)
+      expect(current_path).to eq(root_path)
+    end
+  end
 end
