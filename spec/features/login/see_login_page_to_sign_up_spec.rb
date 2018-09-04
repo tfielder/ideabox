@@ -18,4 +18,24 @@ describe 'as a visitor' do
       expect(page).to have_content("Welcome, #{username}!")
     end
   end
+  describe 'it can login with credentials' do
+    it 'can click on link to an account' do
+      user = User.create(username: "Rocket", password: "test")
+
+      visit '/'
+
+      click_on "Sign In"
+
+      fill_in :username, with: user.username
+      fill_in :password, with: user.password
+
+      click_on "Log In"
+
+      expect(current_path).to eq(user_path(user))
+
+      expect(page).to have_content("Welcome, #{user.username}!")
+      expect(page).to have_content("Log Out")
+
+    end
+  end
 end
