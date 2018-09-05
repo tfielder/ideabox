@@ -12,7 +12,7 @@ describe 'on idea index page' do
 
       visit user_path(user1)
 
-      first('.deletion').click_on("Delete")
+      first('.modify').click_on("Delete")
 
       expect(current_path).to eq (user_path(user1))
       expect(page).to have_content("#{idea2.title}")

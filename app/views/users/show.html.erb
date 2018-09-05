@@ -3,14 +3,14 @@
 
 <%= link_to "Create a New Idea", new_user_idea_path(@user) %> </br>
 
-<% @user.ideas.each do |idear| %>
-  <div class="deletion">
+<% @user.ideas.each do |idea| %>
+  <div class="modify">
     <ul>
-      <li><%= link_to "#{idear.title}", user_idea_path(@user, idear) %></li>
-      <li><%= idear.image %></li>
-      <li><%= idear.note %></li>
+      <li><%= link_to "#{idear.title}", user_idea_path(@user, idea) %></li>
+      <li><%= idea.image %></li>
+      <li><%= idea.note %></li>
     </ul>
-    <%= link_to "Edit", edit_user_idea_path(@user, idear) %>
-    <%= link_to "Delete", user_idea_path(@user, idear), method: :delete %>
+    <%= link_to "Edit", edit_user_idea_path(@user, idea) %>
+    <%= link_to "Delete", user_idea_path(@user, idea), method: :delete %>
   </div>
 <% end %>
