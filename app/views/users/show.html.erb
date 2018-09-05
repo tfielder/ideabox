@@ -6,7 +6,7 @@
 <% @user.ideas.each do |idea| %>
   <div class="modify">
     <ul>
-      <li><%= link_to "#{idear.title}", user_idea_path(@user, idea) %></li>
+      <li><%= link_to "#{idea.title}", user_idea_path(@user, idea) %></li>
       <li><%= idea.image %></li>
       <li><%= idea.note %></li>
     </ul>

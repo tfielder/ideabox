@@ -10,9 +10,9 @@ describe 'from idea index' do
       idea1 = user1.ideas.create(title: "monster", image: "frankenstein", note: "great idea")
       idea2 = user1.ideas.create(title: "bride", image: "bride of frankenstein", note: "grandiose")
 
-      visit user_ideas_path(user1)
+      visit user_path(user1)
 
-      first('.modify').click_link 'Edit'
+      first('.modify').click_on 'Edit'
 
       expect(current_path).to eq(edit_user_idea_path(user1, idea1))
     end
@@ -26,6 +26,8 @@ describe 'from idea index' do
       idea1 = user1.ideas.create(title: "monster", image: "frankenstein", note: "great idea")
       idea2 = user1.ideas.create(title: "bride", image: "bride of frankenstein", note: "grandiose")
 
+      visit user_path(user1)
+
       first('.modify').click_link 'Edit'
 
       expect(current_path).to eq(edit_user_idea_path(user1, idea1))
@@ -35,7 +37,7 @@ describe 'from idea index' do
 
       click_on "Update Idea"
 
-      expect(current_path).to eq(user_ideas_path(user1))
+      expect(current_path).to eq(user_path(user1))
       expect(page).to have_content("Cool")
       expect(page).to have_content("Sospecial")
     end

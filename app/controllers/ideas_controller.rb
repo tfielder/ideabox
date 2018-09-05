@@ -17,17 +17,17 @@ class IdeasController < ApplicationController
   end
 
   def edit
-
+    @user = current_user
   end
 
   def update
     @idea.update(idea_params)
-    redirect_to ideas_path
+    redirect_to user_path(current_user)
   end
 
   def destroy
     @idea = Idea.destroy(params[:id])
-    redirect_to ideas_path
+    redirect_to user_path(current_user)
   end
 
   private

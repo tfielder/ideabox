@@ -5,6 +5,8 @@ describe 'when a user goes to idea index' do
     it 'shows all ideas' do
       user1 = User.create(username: "Job", password: "pass")
 
+      category = "Student"
+
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
       idea1 = user1.ideas.create(title: "monster", image: "frankenstein", note: "great idea")
