@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::BaseController
   before_action :set_category, only: [:edit, :update]
 
   def index
@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     @category.save
-    redirect_to categories_path
+    redirect_to admin_categories_path
   end
 
   def edit
@@ -21,12 +21,12 @@ class CategoriesController < ApplicationController
 
   def update
     @category.update(category_params)
-    redirect_to categories_path
+    redirect_to admin_categories_path
   end
 
   def destroy
     @category = Category.destroy(params[:id])
-    redirect_to categories_path
+    redirect_to admin_categories_path
   end
 
   private
