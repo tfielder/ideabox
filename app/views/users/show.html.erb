@@ -1,10 +1,16 @@
 <h1>Logged in as, <%= current_user.username %></h1>
 <%= link_to "Log Out", logout_path %>
 
+<%= link_to "Create a New Idea", new_user_idea_path(@user) %>
+
 <%= @ideas.each do |idear| %>
-<ul>
-  <li>idear.title</li>
-  <li>idear.image</li>
-  <li>idear.note</li>
-</ul>
+  <div class="deletion">
+    <ul>
+      <li><%= link_to "#{idear.title}", user_idea_path(@user ,idear) %></li>
+      <li><%= idear.image %></li>
+      <li><%= idear.note %></li>
+    </ul>
+    <%= link_to "Edit", edit_user_idea_path(@user, idear) %>
+    <%= link_to "Delete", user_idea_path(@user, idear), method: :delete %>
+  </div>
 <% end %>
