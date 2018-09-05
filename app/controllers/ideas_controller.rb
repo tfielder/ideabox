@@ -7,6 +7,7 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @user = User.find(params[:user_id])
   end
 
   def create
