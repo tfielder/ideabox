@@ -7,7 +7,7 @@ describe Idea, type: :model do
     it {should validate_presence_of :note}
   end
   describe 'relationships' do
-    it {should have_many(:ideacategories)}
-    it {should have_many(:categories).through(:ideacategories)}
+    it {should belong_to(:category)}
+    it {should belong_to(:user)}
   end
 end
