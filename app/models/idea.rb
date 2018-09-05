@@ -1,5 +1,5 @@
 class Idea < ApplicationRecord
   validates_presence_of :title, :image, :note
-  has_many :ideacategories
-  has_many :categories, through: :ideacategories
+  has_many :categories
+  belongs_to :user
 end
