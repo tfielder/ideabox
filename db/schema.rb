@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180906043114) do
+ActiveRecord::Schema.define(version: 20180906041356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180906043114) do
 
   create_table "ideas", force: :cascade do |t|
     t.string "title"
-    t.string "image"
+    t.string "image", default: "https://www.boxedinn.com/wp-content/uploads/boxed-inn-12x9x6-shipping-box.jpg"
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,9 +42,9 @@ ActiveRecord::Schema.define(version: 20180906043114) do
 
   create_table "images", force: :cascade do |t|
     t.string "url"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
   end
 
   create_table "users", force: :cascade do |t|
