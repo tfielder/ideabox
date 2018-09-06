@@ -4,7 +4,7 @@
 <%= link_to "Create a New Idea", new_user_idea_path(@user) %> </br>
 </br>
 <%= link_to "Category Corner", admin_categories_path if current_user.admin? %>
-
+</br></br>
 <% @user.ideas.each do |idea| %>
   <div class="modify">
     <ul>

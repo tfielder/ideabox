@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+h1 {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  text-align: center;
+}
+
+h2, p, li, a {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+}
+
+div {
+  display: inline-block;
+  text-align: center;
+}
+
+img {
+  width: 100px;
+
+}
+
+ul {
+  list-style: none;
+}
