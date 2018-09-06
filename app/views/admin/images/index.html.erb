@@ -1,0 +1,16 @@
+<h1>Images</h1>
+</br>
+<%= render partial: '/layouts/nav' %>
+</br>
+<%= link_to "Create a New Image", new_admin_image_path %>
+</br></br>
+<% @images.each do |pic| %>
+  <div class="modify">
+    <ul>
+      <li><img src="<%= pic.url %>"</li>
+      <li><%= pic.description %></li>
+    </ul>
+    <%= link_to "Edit", edit_admin_image_path(pic) %>
+    <%= link_to "Delete", admin_image_path(pic), method: :delete %>
+  </div>
+<% end %>

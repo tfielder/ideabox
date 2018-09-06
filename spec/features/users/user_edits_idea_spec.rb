@@ -32,7 +32,7 @@ describe 'from idea index' do
 
       expect(current_path).to eq(edit_user_idea_path(user1, idea1))
       fill_in "idea[title]", with: "Cool"
-      fill_in "idea[image]", with: "Image"
+      # fill_in "idea[image]", with: "Image"
       fill_in "idea[note]", with: "Sospecial"
 
       click_on "Update Idea"

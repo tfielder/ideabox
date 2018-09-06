@@ -31,6 +31,12 @@ class IdeasController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def chooser
+    # render :chooser
+    # @idea.update(idea_params)
+    redirect_to user_path(current_user)
+  end
+
   private
     def idea_params
       params.require(:idea).permit(:title, :image, :note)
