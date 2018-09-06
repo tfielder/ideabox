@@ -6,7 +6,8 @@
   <div class="modify">
     <ul>
       <li><%= link_to "#{idea.title}", user_idea_path(@user, idea) %></li>
-      <li><img src="<%= idea.image %>" alt = "user picture"></li>
+      <li><img src="<%= idea.image %>" alt ="box pic"></li>
+      <li><%= link_to "Change Photo", user_idea_path(@user, idea) %></li>
       <li><%= idea.note %></li>
     </ul>
     <%= link_to "Edit", edit_user_idea_path(@user, idea) %>

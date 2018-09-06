@@ -1,8 +1,9 @@
 <%= form_for [@user, @idea] do |f| %>
 <%= f.label "Title" %>
 <%= f.text_field :title %>
-<%= f.label "Image" %>
-<%= f.text_field :image %>
+<%= link_to "Choose an Image",  %>
+<!-- <%= f.label "Image" %>
+<%= f.text_field :image %> -->
 <%= f.label :category %>
 <%= f.collection_select :category_id, Category.all, :id, :topic %>
 <%= f.label "Note" %>
