@@ -1,0 +1,11 @@
+<%= form_for @idea do |f| %>
+<%= f.label :image %>
+<!-- <%= f.select(:TYPE, Images.collect {|p| [ p.url, p.id ] },
+                                          { :prompt => "Please select"},
+                                          { :multiple => true, :size => 5 }) %> -->
+<% @images.each do |pic| %>
+<img src="<%= pic.url %>">
+<%= options_for_select([pic.url, (pic.index + 1)]) %>
+<% end %>
+<%= f.submit %>
+<% end %>

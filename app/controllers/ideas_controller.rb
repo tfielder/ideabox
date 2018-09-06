@@ -32,7 +32,9 @@ class IdeasController < ApplicationController
   end
 
   def chooser
-
+    # render :chooser
+    # @idea.update(idea_params)
+    redirect_to user_path(current_user)
   end
 
   private
