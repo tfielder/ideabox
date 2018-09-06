@@ -1,9 +1,5 @@
-<h1>Logged in as, <%= current_user.username %></h1>
-<%= link_to "Log Out", logout_path %>
-</br></br>
-<%= link_to "Create a New Idea", new_user_idea_path(@user) %> </br>
-</br>
-<%= link_to "Category Corner", admin_categories_path if current_user.admin? %>
+<%= render partial: '/layouts/nav' %>
+
 </br></br>
 <% @user.ideas.each do |idea| %>
   <div class="modify">
