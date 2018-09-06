@@ -1,0 +1,14 @@
+<h1>Categories</h1>
+</br>
+<%= render partial: '/layouts/nav' %>
+</br>
+</br></br>
+<% @categories.each do |cat| %>
+  <div class="modify">
+    <p>
+      <%= cat.topic %>
+    </p>
+    <%= link_to "Edit", edit_admin_category_path(cat) %>
+    <%= link_to "Delete", admin_category_path(cat), method: :delete %>
+  </div>
+<% end %>

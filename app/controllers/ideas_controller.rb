@@ -7,26 +7,28 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @user = User.find(params[:user_id])
   end
 
   def create
-    @idea = Idea.new(idea_params)
-    @idea.save
-    redirect_to ideas_path
+    user = User.find(params[:user_id])
+    idea = user.ideas.new(idea_params)
+    idea.save
+    redirect_to user_path(current_user)
   end
 
   def edit
-
+    @user = current_user
   end
 
   def update
     @idea.update(idea_params)
-    redirect_to ideas_path
+    redirect_to user_path(current_user)
   end
 
   def destroy
     @idea = Idea.destroy(params[:id])
-    redirect_to ideas_path
+    redirect_to user_path(current_user)
   end
 
   private
