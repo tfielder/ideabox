@@ -15,3 +15,5 @@ cat07 = Category.create(topic: "Work")
 cat08 = Category.create(topic: "School")
 cat09 = Category.create(topic: "Summer")
 cat10 = Category.create(topic: "Chances")
+
+admin = User.create(username: "test", password: "test", role: 1)

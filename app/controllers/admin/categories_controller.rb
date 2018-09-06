@@ -6,12 +6,13 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def new
+    @user = User.find(current_user[:user_id])
     @category = Category.new
   end
 
   def create
-    @category = Category.new(category_params)
-    @category.save
+    category = Category.new(category_params)
+    category.save
     redirect_to admin_categories_path
   end
 

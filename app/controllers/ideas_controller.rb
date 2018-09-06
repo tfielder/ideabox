@@ -11,9 +11,10 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.new(idea_params)
-    @idea.save
-    redirect_to ideas_path
+    user = User.find(params[:user_id])
+    idea = user.ideas.new(idea_params)
+    idea.save
+    redirect_to user_path(current_user)
   end
 
   def edit
