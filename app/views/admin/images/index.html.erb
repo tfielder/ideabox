@@ -1,0 +1,14 @@
+<h1>Images</h1>
+</br>
+<%= render partial: '/layouts/nav' %>
+</br>
+</br></br>
+<% @images.each do |pic| %>
+  <div class="modify">
+    <p>
+      <%= pic.url %>
+    </p>
+    <%= link_to "Edit", edit_admin_image_path(pic) %>
+    <%= link_to "Delete", admin_image_path(pic), method: :delete %>
+  </div>
+<% end %>
