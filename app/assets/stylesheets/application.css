@@ -18,9 +18,13 @@ h1 {
   text-align: center;
 }
 
-h2, p, li, a {
+h2, li, a {
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
+}
+
+p {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 div {

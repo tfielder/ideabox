@@ -6,7 +6,6 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def new
-    @user = User.find(current_user[:user_id])
     @category = Category.new
   end
 
