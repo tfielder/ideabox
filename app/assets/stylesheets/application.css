@@ -13,8 +13,22 @@
  *= require_tree .
  *= require_self
  */
+/* color scheme: #D7CEC7 - Grain;  #565656 - Blackboard;  #76323F - Red;  #CO9F80 - Tan; */
+
+.main_div {
+  width:80%;
+  background-color: #D7CEC7;
+  display: inline-block;
+  padding: 5%;
+}
+
+body {
+  background-color: #76323F;
+  text-align: center;
+}
+
 h1 {
-  font-family: 'Oleo Script Swash Caps', cursive;
+  font-family: 'Simonetta', cursive;
   text-align: center;
 }
 
@@ -23,7 +37,7 @@ h2, li, a {
   text-align: center;
 }
 
-p {
+p, li{
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -39,4 +53,8 @@ img {
 
 ul {
   list-style: none;
+}
+
+a:visited, a:link {
+  color: #76323F;
 }
